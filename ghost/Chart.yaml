@@ -20,7 +20,8 @@ dependencies:
   - ghost-database
   version: 14.x.x
 - name: common
-  repository: oci://registry-1.docker.io/bitnamicharts
+  ###vta repository: oci://registry-1.docker.io/bitnamicharts
+  repository: "https://charts.bitnami.com/bitnami"
   tags:
   - bitnami-common
   version: 2.x.x
