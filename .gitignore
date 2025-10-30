@@ -1,0 +1,20 @@
+# Build Artifacts
+/dist/
+/build/
+/target/
+node_modules/
+
+# Log Files
+*.log
+logs/
+
+# IDE/Editor Specific Files
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.bak
+
+# Local Configuration
+.env
+config.local.yaml
