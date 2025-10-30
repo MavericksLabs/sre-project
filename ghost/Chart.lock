@@ -3,7 +3,7 @@ dependencies:
   repository: https://charts.bitnami.com/bitnami
   version: 14.0.3
 - name: common
-  repository: oci://registry-1.docker.io/bitnamicharts
+  repository: https://charts.bitnami.com/bitnami
   version: 2.31.4
-digest: sha256:d564df7b8bab7379dea0d309e9aa944160198fe076ee4a7757e8df0cd103c143
-generated: "2025-10-30T17:07:32.4403872-04:00"
+digest: sha256:445cb0db22bc3690f090f6f5b4a8181570c393d918d4f9171d2c925f4581ee4f
+generated: "2025-10-30T17:12:02.4103843-04:00"
