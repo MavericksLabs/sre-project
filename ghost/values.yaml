@@ -17,8 +17,11 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
+
   ###vta defaultStorageClass: ""
   defaultStorageClass: "gp2-csi"
+  ###vta
+
   ## Security parameters
   ##
   security:
@@ -610,16 +613,21 @@ persistence:
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
   ## If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
   ##
+  
   ###vta storageClass: ""
   storageClass: "ghost"
   ## @param persistence.annotations Additional custom annotations for the PVC
   ##
+
   annotations: {}
   ## @param persistence.accessModes [array] Persistent Volume access modes
   ##
   accessModes:
+    
     ###vta - ReadWriteOnce
     - ReadWriteMany
+    ###vtq
+
   ## @param persistence.size Persistent Volume size
   ##
   size: 8Gi
@@ -694,6 +702,7 @@ volumePermissions:
 ## ref: https://github.com/bitnami/charts/blob/main/bitnami/mysql/values.yaml
 ##
 mysql:
+
   ###vta
   metrics: 
     enabled: true
@@ -717,7 +726,7 @@ mysql:
   ##      https://github.com/bitnami/containers/tree/main/bitnami/mysql/#creating-a-database-user-on-first-run
   auth:
     ###vta rootPassword: ""
-    rootPassword: "root"
+    rootPassword: "ChangeMe2025!!"
     database: bitnami_ghost
     username: bn_ghost
     ###vta password: ""
