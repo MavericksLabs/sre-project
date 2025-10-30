@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ghost
+  namespace: argocd
+spec:
+  project: deploy
+  source:
+    repoURL: 'https://github.com/MavericksLabs/sre-project.git'
+    targetRevision: master
+    path: ghost
+    helm: 
+      valueFiles:
+        - values.yaml
+  destination:
+      server: https://kubernetes.default.svc ###vta local k8s cluster
+      namespace: 'app'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
