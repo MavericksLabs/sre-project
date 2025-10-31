@@ -17,11 +17,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-
-  ###vta defaultStorageClass: ""
   defaultStorageClass: "gp2-csi"
-  ###vta
-
   ## Security parameters
   ##
   security:
@@ -473,12 +469,9 @@ service:
   externalTrafficPolicy: Cluster
   ## @param service.annotations Additional custom annotations for Ghost service
   ##
-  
-  ###vta annotations: {}
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
-  ###vta
-
+  
   ## @param service.extraPorts Extra port to expose on Ghost service
   ##
   extraPorts: []
@@ -613,21 +606,14 @@ persistence:
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
   ## If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
   ##
-  
-  ###vta storageClass: ""
   storageClass: "ghost"
   ## @param persistence.annotations Additional custom annotations for the PVC
   ##
-
   annotations: {}
   ## @param persistence.accessModes [array] Persistent Volume access modes
   ##
   accessModes:
-    
-    ###vta - ReadWriteOnce
     - ReadWriteMany
-    ###vtq
-
   ## @param persistence.size Persistent Volume size
   ##
   size: 8Gi
@@ -702,12 +688,10 @@ volumePermissions:
 ## ref: https://github.com/bitnami/charts/blob/main/bitnami/mysql/values.yaml
 ##
 mysql:
-
-  ###vta
-  metrics: 
+  
+  metrics:
     enabled: true
-  ###vta
-
+  
   ## @param mysql.enabled Deploy a MySQL server to satisfy the applications database requirements
   ## To use an external database set this to false and configure the `externalDatabase.*` parameters
   ##
@@ -725,12 +709,10 @@ mysql:
   ##      https://github.com/bitnami/containers/tree/main/bitnami/mysql/#creating-a-database-on-first-run
   ##      https://github.com/bitnami/containers/tree/main/bitnami/mysql/#creating-a-database-user-on-first-run
   auth:
-    ###vta rootPassword: ""
-    rootPassword: "ChangeMe2025!!"
+    rootPassword: "root"
     database: bitnami_ghost
     username: bn_ghost
-    ###vta password: ""
-    password: "ChangeMe2025!!"
+    password: "root"
     existingSecret: ""
   ## MySQL Primary configuration
   ##
