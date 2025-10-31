@@ -694,7 +694,7 @@ mysql:
 
   image:
     registry: docker.io
-    repository: bitnamilegacy/mysql
+    repository: bitnami/mysql
     tag: latest
   
   ## @param mysql.enabled Deploy a MySQL server to satisfy the applications database requirements
